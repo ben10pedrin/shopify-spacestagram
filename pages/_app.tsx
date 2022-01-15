@@ -4,10 +4,21 @@ import { AppProvider } from "@shopify/polaris";
 import enTranslations from "@shopify/polaris/locales/en.json";
 import "../styles/globals.css";
 import { NavBar } from "../components/NavBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const initDarkMode = () => {
+      if (!localStorage.getItem("darkmode")) {
+        localStorage.setItem("darkmode", "false");
+        return false;
+      }
+      return localStorage.getItem("darkmode") === "true";
+    };
+    setIsDarkMode(initDarkMode());
+  }, []);
 
   return (
     <AppProvider

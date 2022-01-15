@@ -35,7 +35,6 @@ const Home: NextPage = () => {
 
     setPhotos([...photos, ...newPhotos.reverse()]);
     totalFetched.current += AMOUNT;
-    console.log("fetched", totalFetched);
     setIsFetching(false);
   };
 
@@ -51,45 +50,45 @@ const Home: NextPage = () => {
   };
 
   return (
-    <>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          justifyContent: "space-evenly",
-          height: `calc(100vh - ${NAVBAR_SIZE})`,
-          marginTop: NAVBAR_SIZE,
-          overflowY: "scroll",
-        }}
-        onScroll={handleScroll}
-      >
-        {photos.map((photo) => (
-          // photo date is a unique string
-          <FeedCard
-            key={photo.date}
-            title={photo.title}
-            date={photo.date}
-            description={photo.explanation}
-            url={photo.url}
-            mediaType={photo.media_type}
-          />
-        ))}
-        {isFetching && (
-          <div
-            style={{
-              display: "flex",
-              maxWidth: "350px",
-              width: "100%",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Spinner accessibilityLabel="Spinner example" size="large" />
-          </div>
-        )}
-      </div>
-    </>
+    <div
+      aria-label="FeedCard container"
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "space-evenly",
+        height: `calc(100vh - ${NAVBAR_SIZE})`,
+        marginTop: NAVBAR_SIZE,
+        overflowY: "scroll",
+      }}
+      onScroll={handleScroll}
+    >
+      {photos.map((photo) => (
+        // photo date is a unique string
+        <FeedCard
+          key={photo.date}
+          title={photo.title}
+          date={photo.date}
+          description={photo.explanation}
+          url={photo.url}
+          mediaType={photo.media_type}
+        />
+      ))}
+      {isFetching && (
+        <div
+          aria-label="Spinner container"
+          style={{
+            display: "flex",
+            maxWidth: "350px",
+            width: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Spinner accessibilityLabel="Spinner" size="large" />
+        </div>
+      )}
+    </div>
   );
 };
 
