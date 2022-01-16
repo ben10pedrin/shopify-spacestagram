@@ -1,6 +1,6 @@
 ## Spacestagram
 
-![](https://github.com/ben10pedrin/shopify-spacestagram/demo.gif)
+![](https://raw.githubusercontent.com/ben10pedrin/shopify-spacestagram/main/demo.gif)
 
 # Stack
 
