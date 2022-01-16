@@ -1,5 +1,7 @@
 ## Spacestagram
 
+![](https://github.com/ben10pedrin/shopify-spacestagram/tree/main/demo.gif)
+
 # Stack
 
 Next.js + Typescript + Shopify's Polaris
