@@ -28,7 +28,7 @@ Next.js + Typescript + Shopify's Polaris
 
 # Usage:
 
-Live on: https://breakdance.github.io/breakdance/
+Live on: https://ben10pedrin-spacestagram.vercel.app/
 
 If you want to run it locally:
 
@@ -37,4 +37,4 @@ npm install
 npm start
 ```
 
-> The API_KEY is included into the source code for demo purposes (using a .env.local file), although in prod I'd hide it in the .gitignore file.
+> The API_KEY is hidden from the source code by using a .env.local file
