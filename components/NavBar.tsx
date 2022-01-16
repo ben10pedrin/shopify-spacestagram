@@ -7,7 +7,10 @@ interface NavBarProps {
   setIsDarkMode: (newValue: boolean) => void;
 }
 
-export const NavBar = ({ isDarkMode, setIsDarkMode }: NavBarProps) => {
+export const NavBar: React.FC<NavBarProps> = ({
+  isDarkMode,
+  setIsDarkMode,
+}) => {
   const router = useRouter();
   return (
     <div

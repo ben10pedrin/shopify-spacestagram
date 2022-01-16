@@ -33,9 +33,8 @@ Live on: https://breakdance.github.io/breakdance/
 If you want to run it locally:
 
 ```bash
-npm run dev
-# or
-yarn dev
+npm install
+npm start
 ```
 
 > The API_KEY is included into the source code for demo purposes (using a .env.local file), although in prod I'd hide it in the .gitignore file.

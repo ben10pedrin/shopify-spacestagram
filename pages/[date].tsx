@@ -3,13 +3,13 @@ import { PhotoOfTheDay } from ".";
 import { FeedCard } from "../components/FeedCard";
 import { NAVBAR_SIZE } from "../utils/utils";
 
-const SinglePost = ({
+const SinglePost: React.FC<PhotoOfTheDay> = ({
   date,
   title,
   explanation,
   media_type,
   url,
-}: PhotoOfTheDay) => {
+}) => {
   return (
     <div
       aria-label="FeedCard container"

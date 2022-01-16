@@ -1,5 +1,5 @@
 import { Button, Card, Image, Stack } from "@shopify/polaris";
-import { HeartMajor, ShareMinor, PromoteMinor } from "@shopify/polaris-icons";
+import { HeartMajor, PromoteMinor, ShareMinor } from "@shopify/polaris-icons";
 import { useState } from "react";
 import { getVideoURLWithParameters } from "../utils/utils";
 
@@ -11,18 +11,21 @@ interface FeedCardProps {
   url: string;
 }
 
-export const FeedCard = ({
+export const FeedCard: React.FC<FeedCardProps> = ({
   title,
   date,
   description,
   url,
   mediaType,
-}: FeedCardProps) => {
+}) => {
   const [isLongDescription, setIsLongDescription] = useState(false);
   const [isCopiedVisible, setIsCopiedVisible] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const SIZE = 300;
   const MAX_DESCRIPTION_CHARS = 256;
+  // The default polari's colors would be better, but for simplicity I used these custom ones
+  const blue = "#1AA7EC";
+  const red = "#bf0711";
 
   const handleShare = () => {
     setIsCopiedVisible(true);
@@ -64,7 +67,7 @@ export const FeedCard = ({
           <Stack alignment="center">
             <div
               aria-label="Like Button Outline"
-              style={isLiked ? { color: "#bf0711" } : {}}
+              style={isLiked ? { color: red } : {}}
             >
               <Button
                 icon={HeartMajor}
@@ -89,10 +92,7 @@ export const FeedCard = ({
               accessibilityLabel="Share button"
             />
             {isCopiedVisible && (
-              <p
-                style={{ color: "#1AA7EC" }}
-                aria-label="Copied to clipboard Text"
-              >
+              <p style={{ color: blue }} aria-label="Copied to clipboard Text">
                 Copied to clipboard!
               </p>
             )}
@@ -108,7 +108,7 @@ export const FeedCard = ({
                 {description.substring(0, MAX_DESCRIPTION_CHARS) + " ... "}
                 <span
                   aria-label="Expand Text"
-                  style={{ color: "#1AA7EC", cursor: "pointer" }}
+                  style={{ color: blue, cursor: "pointer" }}
                   onClick={() => setIsLongDescription(true)}
                 >
                   Show More

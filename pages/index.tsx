@@ -1,5 +1,4 @@
 import { Spinner } from "@shopify/polaris";
-import type { NextPage } from "next";
 import { useEffect, useRef, useState } from "react";
 import { FeedCard } from "../components/FeedCard";
 import { getDateStringWithOffset, NAVBAR_SIZE } from "../utils/utils";
@@ -15,7 +14,7 @@ export interface PhotoOfTheDay {
   url: string;
 }
 
-const Home: NextPage = () => {
+const Index: React.FC = () => {
   const [photos, setPhotos] = useState<PhotoOfTheDay[]>([]);
   const [isFetching, setIsFetching] = useState(false);
   const totalFetched = useRef(0);
@@ -92,4 +91,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Index;
