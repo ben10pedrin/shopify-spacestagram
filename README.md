@@ -1,10 +1,10 @@
 ## Spacestagram
 
-## Stack
+# Stack
 
 Next.js + Typescript + Shopify's Polaris
 
-## Features:
+# Features:
 
 - Photos load as user scrolls (infinite scrolling)
 - Photos are sorted by chronological order (newer photos first)
@@ -26,7 +26,7 @@ Next.js + Typescript + Shopify's Polaris
 - Clicking on the "spacestagram" heading reloads the page
 - Accesibility included (aria-label and alt for images)
 
-## Usage:
+# Usage:
 
 Live on: https://breakdance.github.io/breakdance/
 
